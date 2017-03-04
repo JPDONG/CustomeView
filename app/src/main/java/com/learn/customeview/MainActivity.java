@@ -16,7 +16,6 @@ import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private PathView mPathView;
     private FrameLayout mFrameLayout;
 
     @Override
@@ -25,8 +24,16 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         mFrameLayout = (FrameLayout) findViewById(R.id.content_frame);
-        mPathView = new PathView(this);
-        mFrameLayout.addView(mPathView);
+        /**
+         * show path view
+         */
+        /*PathView mPathView = new PathView(this);
+        mFrameLayout.addView(mPathView);*/
+        /**
+         * show search view
+         */
+        SearchView searchView = new SearchView(this);
+        mFrameLayout.addView(searchView);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
