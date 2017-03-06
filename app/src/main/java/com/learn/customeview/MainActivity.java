@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        mFrameLayout = (FrameLayout) findViewById(R.id.content_frame);
+        //mFrameLayout = (FrameLayout) findViewById(R.id.content_frame);
         /**
          * show path view
          */
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity
         /**
          * show search view
          */
-        SearchView searchView = new SearchView(this);
-        mFrameLayout.addView(searchView);
+        //SearchView searchView = new SearchView(this);
+        //mFrameLayout.addView(searchView);
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);

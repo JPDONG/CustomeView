@@ -8,7 +8,7 @@
     tools:context="com.learn.customeview.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
+    <!--<TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -20,6 +20,10 @@
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></FrameLayout>
+        android:layout_height="wrap_content"></FrameLayout>-->
+
+    <com.learn.customeview.SearchView
+        android:layout_width="400dp"
+        android:layout_height="400dp"/>
 
 </android.support.constraint.ConstraintLayout>

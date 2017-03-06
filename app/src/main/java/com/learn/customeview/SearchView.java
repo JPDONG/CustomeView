@@ -57,7 +57,10 @@ public class SearchView extends View {
         init();
     }
 
+
     private void init() {
+        mWidth = 200;
+        mHeight = 200;
         initPaint();
         initPath();
         initListener();
@@ -71,12 +74,16 @@ public class SearchView extends View {
     private void initPath() {
         mPathMeasure = new PathMeasure();
         path_search = new Path();
+        float serchCircleR = (mWidth > mHeight ? mHeight : mWidth) * 0.2f;
+        float outCircleR = serchCircleR + serchCircleR * 2f;
         //path_search.addCircle(0 ,0, 50, Path.Direction.CW);
-        path_search.addArc(new RectF(-50,-50,50,50), 45, 359.9f);
+        //path_search.addArc(new RectF(-50,-50,50,50), 45, 359.9f);
+        path_search.addArc(new RectF(-serchCircleR,-serchCircleR,serchCircleR,serchCircleR), 45, 359.9f);
         //path_search.lineTo(100, 100);
         path_circle = new Path();
         //path_circle.addCircle(0, 0, 100, Path.Direction.CW);
-        path_circle.addArc(new RectF(-100,-100,100,100), 45, -359.9f);
+        //path_circle.addArc(new RectF(-100,-100,100,100), 45, -359.9f);
+        path_circle.addArc(new RectF(-outCircleR,-outCircleR,outCircleR,outCircleR), 45, -359.9f);
         float[] pos = new float[2];
         float[] tan = new float[2];
         mPathMeasure.setPath(path_circle, false);
@@ -179,6 +186,13 @@ public class SearchView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         mWidth = w;
         mHeight = h;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        mWidth = 200;
+        mHeight = 200;
     }
 
     @Override
